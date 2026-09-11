@@ -8,12 +8,12 @@ export function Hero() {
     <section className="bt-section-shell relative flex min-h-[78vh] flex-col bg-hero-bg sm:min-h-[88vh]">
       <div aria-hidden="true" className="absolute inset-0">
         <Image
-          src="/Gemini_Generated_Image_mya7o8mya7o8mya7.png"
+          src="/HeroAlain.webp"
           alt=""
           fill
           priority
           sizes="100vw"
-          className="object-cover object-[56%_22%] sm:object-[58%_24%] lg:object-[62%_26%]"
+          className="object-cover object-[72%_22%] sm:object-[58%_24%] lg:object-[62%_26%]"
         />
       </div>
       <div
@@ -55,7 +55,7 @@ export function Hero() {
                 <ArrowRight />
               </Link>
               <Link
-                href="/verticalq"
+                href="/vq"
                 className="inline-flex w-full items-center justify-center gap-2 rounded-full border border-surface/30 px-7 py-3.5 text-sm font-semibold text-surface transition-colors hover:border-surface/60 sm:w-auto"
               >
                 Ontdek VerticalQ

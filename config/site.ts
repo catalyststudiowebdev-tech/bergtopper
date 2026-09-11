@@ -20,6 +20,6 @@ export type NavItem = {
 export const mainNav: NavItem[] = [
   { label: "Home", href: "/" },
   { label: "Diensten", href: "/services" },
-  { label: "VerticalQ", href: "/verticalq" },
+  { label: "VerticalQ", href: "/vq" },
   { label: "Contact", href: "/contact" },
 ];

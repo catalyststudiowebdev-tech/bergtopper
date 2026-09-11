@@ -43,18 +43,19 @@ export function VerticalQTalentsModel() {
           </Reveal>
         </div>
 
-        <div className="mt-12 grid gap-4 lg:grid-cols-3">
+        <div className="mt-12 grid gap-8 lg:grid-cols-3 lg:gap-10">
           {groups.map((group, groupIndex) => (
             <Reveal
               key={group.name}
               delay={Math.min(groupIndex, 3) * 70}
+              className="relative border-t border-border pt-6"
             >
-              <div className="flex items-center gap-3">
-                <span className="inline-flex h-8 min-w-8 items-center justify-center rounded-full border border-border px-2 text-[10px] font-semibold tracking-[0.16em] text-muted">
-                  {String(groupIndex + 1).padStart(2, "0")}
-                </span>
-                <h3 className="font-heading text-xl text-foreground">{group.name}</h3>
-              </div>
+              <span className="text-xs font-semibold tracking-[0.22em] text-muted/70">
+                {String(groupIndex + 1).padStart(2, "0")}
+              </span>
+              <h3 className="mt-3 font-heading text-xl leading-tight text-foreground">
+                {group.name}
+              </h3>
 
               <ul className="mt-4 list-disc space-y-3 pl-5 text-sm leading-7 text-muted marker:text-muted">
                 {group.talents.map((talent) => (

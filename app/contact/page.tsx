@@ -59,7 +59,7 @@ export default function ContactPage() {
             </div>
 
             <Reveal delay={210}>
-              <ContactForm contactEmail={siteConfig.email} />
+              <ContactForm />
             </Reveal>
           </div>
         </Container>

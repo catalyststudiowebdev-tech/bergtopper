@@ -7,10 +7,13 @@ export function AboutAlain() {
   return (
     <section className="bg-surface py-20 sm:py-28">
       <Container>
-        <div className="grid items-center gap-12 lg:grid-cols-[minmax(0,0.9fr)_1.1fr] lg:gap-16">
-          {/* Photo */}
+        <div className="grid items-center gap-8 lg:grid-cols-[minmax(0,0.9fr)_1.1fr] lg:gap-x-16 lg:gap-y-6">
+          <Reveal as="h2" className="order-1 bt-section-title text-foreground lg:order-none lg:col-start-2 lg:row-start-1">
+            De mens achter BergTopper.
+          </Reveal>
+
           <Reveal
-            className="relative mx-auto w-full max-w-[17rem] sm:max-w-xs lg:mx-0 lg:max-w-sm"
+            className="relative order-2 mx-auto w-full max-w-[17rem] sm:max-w-xs lg:order-none lg:col-start-1 lg:row-start-1 lg:row-span-2 lg:mx-0 lg:max-w-sm"
             delay={70}
           >
             <div className="relative aspect-[4/5] w-full overflow-hidden rounded-3xl sm:rounded-[2rem]">
@@ -25,12 +28,8 @@ export function AboutAlain() {
             </div>
           </Reveal>
 
-          {/* Text */}
-          <div>
-            <Reveal as="h2" className="bt-section-title text-foreground">
-              De mens achter BergTopper.
-            </Reveal>
-            <Reveal className="bt-body mt-6 space-y-5 text-muted" delay={140}>
+          <div className="order-3 lg:order-none lg:col-start-2 lg:row-start-2">
+            <Reveal className="bt-body space-y-5 text-muted" delay={140}>
               <p>
                 Alain is oprichter van BergTopper en begeleidt professionals
                 en teams al meer dan tien jaar in hun groei. Zijn aanpak

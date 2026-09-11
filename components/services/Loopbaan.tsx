@@ -39,21 +39,18 @@ export function ServicesLoopbaan() {
           </Reveal>
         </div>
 
-        <div className="mt-10 grid gap-7 md:grid-cols-2 xl:grid-cols-4">
+        <div className="mt-10 grid gap-8 md:grid-cols-2 md:gap-10 xl:grid-cols-4">
           {steps.map((step, index) => (
-            <Reveal key={step.number} as="article" delay={Math.min(index, 3) * 70}>
-              <div className="mb-5 flex items-center">
-                <span className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-border text-xs font-semibold text-muted">
-                  {step.number}
-                </span>
-                {index < steps.length - 1 && (
-                  <>
-                    <span className="mx-3 hidden h-px flex-1 bg-border xl:block" />
-                    <span className="hidden text-muted/40 xl:inline">→</span>
-                  </>
-                )}
-              </div>
-              <h3 className="font-heading text-xl leading-tight text-foreground">
+            <Reveal
+              key={step.number}
+              as="article"
+              delay={Math.min(index, 3) * 70}
+              className="relative border-t border-border pt-6"
+            >
+              <span className="text-xs font-semibold tracking-[0.22em] text-muted/70">
+                {step.number}
+              </span>
+              <h3 className="mt-3 font-heading text-xl leading-tight text-foreground">
                 {step.title}
               </h3>
               <p className="mt-3 text-sm leading-7 text-muted">{step.text}</p>

@@ -27,7 +27,7 @@ export function ServicesVerticalQTeaser() {
 
         <Reveal className="mt-8 flex flex-col items-stretch gap-3.5 sm:flex-row sm:items-center sm:gap-4" delay={210}>
           <Link
-            href="/verticalq"
+            href="/vq"
             className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-surface px-7 py-3.5 text-sm font-semibold text-foreground transition-opacity hover:opacity-90 sm:w-auto"
           >
             Ontdek VerticalQ
