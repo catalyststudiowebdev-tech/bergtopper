@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { Container } from "@/components/layout/Container";
+import { Reveal } from "@/components/motion/Reveal";
 
 const testimonials = [
   {
@@ -72,21 +73,22 @@ export function Testimonials() {
         <div className="grid gap-12 lg:grid-cols-[1fr_1.2fr] lg:gap-16">
           {/* Left: heading */}
           <div className="max-w-md">
-            <h2 className="bt-section-title text-accent">
+            <Reveal as="h2" className="bt-section-title text-accent">
               Echte verhalen van coaches, creators en experts die ik heb geholpen
-            </h2>
-            <p className="bt-body mt-6 text-muted">
+            </Reveal>
+            <Reveal as="p" className="bt-body mt-6 text-muted" delay={70}>
               Elke stem vertelt een uniek traject, gevormd door helderheid,
               strategie en de moed om authentiek te groeien.
-            </p>
+            </Reveal>
           </div>
 
           {/* Right: testimonial card */}
-          <div
+          <Reveal
             onMouseEnter={() => setIsPaused(true)}
             onMouseLeave={() => setIsPaused(false)}
             onFocusCapture={() => setIsPaused(true)}
             onBlurCapture={() => setIsPaused(false)}
+            delay={140}
           >
             <div className="flex gap-5">
               {/* Avatar */}
@@ -97,7 +99,7 @@ export function Testimonials() {
                 {active.initials}
               </div>
 
-              <blockquote className="flex min-h-[260px] flex-col sm:min-h-[240px]">
+              <blockquote className="flex flex-col">
                 <p className="text-lg leading-snug tracking-tight text-accent sm:text-xl lg:text-2xl">
                   &ldquo;{active.quote}&rdquo;
                 </p>
@@ -130,7 +132,7 @@ export function Testimonials() {
                 />
               ))}
             </div>
-          </div>
+          </Reveal>
         </div>
       </Container>
     </section>

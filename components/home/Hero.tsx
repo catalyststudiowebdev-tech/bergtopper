@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { siteConfig } from "@/config/site";
+import { Container } from "@/components/layout/Container";
 
 export function Hero() {
   return (
@@ -30,39 +31,39 @@ export function Hero() {
       />
 
       <div className="relative z-10 flex flex-1 items-center">
-        <div className="mx-auto w-full max-w-6xl px-6 pb-24 pt-20 sm:pb-32 sm:pt-28">
+        <Container className="pb-24 pt-20 sm:pb-32 sm:pt-28">
           <div className="max-w-2xl">
-            <h1 className="font-display text-4xl leading-[1.08] tracking-tight text-surface sm:text-6xl lg:text-7xl">
+            <h1 className="bt-enter font-display text-4xl leading-[1.08] tracking-tight text-surface sm:text-6xl lg:text-7xl">
               Iedereen verdient{" "}
               <br className="hidden sm:block" />
               zijn eigen{" "}
               <span style={{ color: "#8BAF72" }}>bergtop.</span>
             </h1>
 
-            <p className="bt-body mt-8 max-w-xl text-surface/75">
+            <p className="bt-body bt-enter bt-enter-d1 mt-8 max-w-xl text-surface/75">
               BergTopper helpt professionals, leiders en organisaties om hun
               volledige potentieel te benutten. Met recruitment, coaching,
-              team- en leiderschapsontwikkeling en VerticalIQ.
+              team- en leiderschapsontwikkeling en VerticalQ.
             </p>
 
-            <div className="mt-10 flex flex-wrap gap-4">
+            <div className="bt-enter bt-enter-d2 mt-10 flex flex-col items-stretch gap-3.5 sm:flex-row sm:items-center sm:gap-4">
               <Link
                 href={siteConfig.ctaHref}
-                className="inline-flex items-center gap-2 rounded-full bg-surface px-7 py-3.5 text-sm font-semibold text-foreground transition-opacity hover:opacity-90"
+                className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-surface px-7 py-3.5 text-sm font-semibold text-foreground transition-opacity hover:opacity-90 sm:w-auto"
               >
                 {siteConfig.ctaLabel}
                 <ArrowRight />
               </Link>
               <Link
-                href="/verticaliq"
-                className="inline-flex items-center gap-2 rounded-full border border-surface/30 px-7 py-3.5 text-sm font-semibold text-surface transition-colors hover:border-surface/60"
+                href="/verticalq"
+                className="inline-flex w-full items-center justify-center gap-2 rounded-full border border-surface/30 px-7 py-3.5 text-sm font-semibold text-surface transition-colors hover:border-surface/60 sm:w-auto"
               >
-                Ontdek VerticalIQ
+                Ontdek VerticalQ
                 <ArrowRight />
               </Link>
             </div>
           </div>
-        </div>
+        </Container>
       </div>
     </section>
   );

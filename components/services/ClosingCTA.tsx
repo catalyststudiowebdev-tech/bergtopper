@@ -1,42 +1,32 @@
 import Link from "next/link";
-import { siteConfig } from "@/config/site";
-import { LogoMark } from "@/components/brand/LogoMark";
 import { Container } from "@/components/layout/Container";
+import { LogoMark } from "@/components/brand/LogoMark";
 import { Reveal } from "@/components/motion/Reveal";
 
-export function CTA() {
+export function ServicesClosingCTA() {
   return (
     <section className="relative overflow-hidden bg-hero-bg py-20 sm:py-28">
       <div aria-hidden="true" className="absolute inset-0 bt-fade-hero opacity-70" />
       <div aria-hidden="true" className="absolute inset-0 bt-dots-dark opacity-50" />
+
       <Container className="relative z-10">
         <div className="mx-auto max-w-2xl text-center">
-          {/* Mountain icon */}
           <Reveal>
             <LogoMark className="mx-auto mb-8 h-9 w-auto text-surface/40" />
           </Reveal>
-
           <Reveal as="h2" className="bt-section-title text-surface" delay={70}>
-            Klaar om jouw bergtop te bereiken?
+            Klaar om gericht te groeien?
           </Reveal>
           <Reveal as="p" className="bt-body mx-auto mt-6 max-w-lg text-surface/75" delay={140}>
-            Plan een vrijblijvend kennismakingsgesprek. We luisteren eerst,
-            stellen de juiste vragen en kijken samen wat past.
+            Plan een vrijblijvend gesprek en ontdek welke dienst van BergTopper
+            het beste past bij jouw vraag, team of organisatie.
           </Reveal>
-
-          <Reveal className="mt-10 flex flex-col items-center justify-center gap-3.5 sm:flex-row" delay={210}>
+          <Reveal className="mt-10 flex justify-center" delay={210}>
             <Link
-              href={siteConfig.ctaHref}
-              className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-surface px-7 py-3.5 text-sm font-semibold text-foreground transition-opacity hover:opacity-90 sm:w-auto"
+              href="/contact"
+              className="inline-flex w-full max-w-sm items-center justify-center gap-2 rounded-full bg-surface px-7 py-3.5 text-sm font-semibold text-foreground transition-opacity hover:opacity-90 sm:w-auto sm:max-w-none"
             >
-              {siteConfig.ctaLabel}
-              <ArrowRight />
-            </Link>
-            <Link
-              href="/services"
-              className="inline-flex w-full items-center justify-center gap-2 rounded-full border border-surface/40 px-7 py-3.5 text-sm font-semibold text-surface transition-colors hover:border-surface/70 hover:bg-surface/5 sm:w-auto"
-            >
-              Bekijk alle diensten
+              Plan een gesprek
               <ArrowRight />
             </Link>
           </Reveal>

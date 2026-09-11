@@ -69,7 +69,6 @@
   --color-footer-bg: var(--footer-bg);
   --color-mountain-fade: var(--mountain-fade);
   --font-sans: var(--font-roboto-slab);
-  --font-mono: var(--font-geist-mono);
   --font-body: var(--font-roboto-slab);
   --font-heading: var(--font-sora);
   --font-display: var(--font-fjord-one);
@@ -124,7 +123,8 @@ html {
 .bt-section-shell {
   position: relative;
   isolation: isolate;
-  overflow: hidden;
+  overflow-x: hidden;
+  overflow-y: visible;
 }
 
 .bt-dots-dark {
@@ -148,8 +148,62 @@ html {
   fill: none;
 }
 
+/* ─── Motion tokens & helpers ──────────────────────────────────── */
+:root {
+  --bt-motion-fast: 200ms;
+  --bt-motion-base: 300ms;
+  --bt-motion-enter: 950ms;
+  --bt-motion-ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@keyframes bt-enter-rise {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.bt-enter {
+  animation: bt-enter-rise var(--bt-motion-enter) var(--bt-motion-ease-out) both;
+}
+
+.bt-enter-d1 {
+  animation-delay: 120ms;
+}
+
+.bt-enter-d2 {
+  animation-delay: 240ms;
+}
+
+.bt-reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition:
+    opacity var(--bt-motion-enter) var(--bt-motion-ease-out),
+    transform var(--bt-motion-enter) var(--bt-motion-ease-out);
+  transition-delay: var(--bt-reveal-delay, 0ms);
+  will-change: opacity, transform;
+}
+
+.bt-reveal.is-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
+  }
+
+  .bt-enter,
+  .bt-reveal {
+    animation: none;
+    opacity: 1;
+    transform: none;
+    transition: none;
   }
 }

@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { Container } from "@/components/layout/Container";
+import { Reveal } from "@/components/motion/Reveal";
 
 const services = [
   {
@@ -7,24 +8,28 @@ const services = [
     title: "Recruitment",
     description:
       "We vinden leiders en specialisten die niet alleen passen op papier, maar het verschil maken in de praktijk.",
+    href: "/services#recruitment",
   },
   {
     icon: "coaching",
     title: "Executive Coaching",
     description:
       "1-op-1 coaching voor leiders die willen groeien, scherp blijven en met meer impact willen leiden.",
+    href: "/services#loopbaan",
   },
   {
     icon: "team",
     title: "Team & Leadership",
     description:
       "We versterken teams en leiderschapscapaciteit voor duurzame samenwerking en resultaat.",
+    href: "/services#team-organisatie",
   },
   {
     icon: "verticaliq",
-    title: "VerticalIQ",
+    title: "VerticalQ",
     description:
       "Ons bewezen model dat hoofd, hart en buik met elkaar verbindt voor authenticiteit en effectief leiderschap.",
+    href: "/services#verticalq",
   },
 ] as const;
 
@@ -62,14 +67,16 @@ export function WhyBergTopper() {
         <div aria-hidden="true" className="absolute inset-0 bt-fade-hero opacity-70" />
         <div aria-hidden="true" className="absolute inset-0 bt-dots-dark opacity-50" />
         <Container className="relative z-10">
-          <h2 className="bt-section-title max-w-xl text-surface">
+          <Reveal as="h2" className="bt-section-title max-w-xl text-surface">
             Diensten die blijvend verschil maken.
-          </h2>
+          </Reveal>
 
           <div className="mt-10 grid items-stretch gap-4 sm:grid-cols-2 xl:grid-cols-4">
-            {services.map((service) => (
-              <article
+            {services.map((service, index) => (
+              <Reveal
                 key={service.title}
+                as="article"
+                delay={Math.min(index, 3) * 70}
                 className="flex h-full flex-col rounded-2xl bg-surface/8 p-6 text-surface shadow-sm ring-1 ring-white/10 backdrop-blur-sm"
               >
                 <div className="mb-5 text-surface/60">
@@ -82,13 +89,13 @@ export function WhyBergTopper() {
                   {service.description}
                 </p>
                 <Link
-                  href="/services"
+                  href={service.href}
                   className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-surface/80 transition-colors hover:text-surface"
                 >
                   Meer ontdekken
                   <ArrowRight />
                 </Link>
-              </article>
+              </Reveal>
             ))}
           </div>
         </Container>
@@ -96,13 +103,13 @@ export function WhyBergTopper() {
 
       <div className="bg-surface py-16 sm:py-20">
         <Container>
-          <h3 className="bt-section-title max-w-xl text-foreground">
+          <Reveal as="h3" className="bt-section-title max-w-xl text-foreground">
             Een aanpak die werkt.
-          </h3>
+          </Reveal>
 
           <div className="mt-10 grid gap-7 md:grid-cols-2 xl:grid-cols-4">
             {processSteps.map((step, index) => (
-              <article key={step.number}>
+              <Reveal key={step.number} as="article" delay={Math.min(index, 3) * 70}>
                 <div className="mb-5 flex items-center">
                   <span className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-border text-xs font-semibold text-muted">
                     {step.number}
@@ -120,7 +127,7 @@ export function WhyBergTopper() {
                 <p className="mt-3 text-sm leading-7 text-muted">
                   {step.description}
                 </p>
-              </article>
+              </Reveal>
             ))}
           </div>
         </Container>

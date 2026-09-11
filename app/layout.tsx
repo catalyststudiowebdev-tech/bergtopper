@@ -1,14 +1,9 @@
 import type { Metadata } from "next";
-import { Fjord_One, Geist_Mono, Roboto_Slab, Sora } from "next/font/google";
+import { Fjord_One, Roboto_Slab, Sora } from "next/font/google";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { siteConfig } from "@/config/site";
 import "./globals.css";
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
 
 const sora = Sora({
   variable: "--font-sora",
@@ -33,6 +28,9 @@ export const metadata: Metadata = {
   },
   description: siteConfig.description,
   metadataBase: new URL(siteConfig.url),
+  icons: {
+    icon: [{ url: "/icon.svg", type: "image/svg+xml" }],
+  },
 };
 
 export default function RootLayout({
@@ -43,7 +41,8 @@ export default function RootLayout({
   return (
     <html
       lang="nl"
-      className={`${geistMono.variable} ${sora.variable} ${robotoSlab.variable} ${fjordOne.variable} h-full antialiased`}
+      data-scroll-behavior="smooth"
+      className={`${sora.variable} ${robotoSlab.variable} ${fjordOne.variable} h-full antialiased`}
     >
       <body className="flex min-h-full flex-col bg-background text-foreground">
         <Header />
