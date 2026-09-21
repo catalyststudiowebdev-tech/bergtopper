@@ -7,7 +7,7 @@ const offers = [
     title: "Individuele VerticalQ Talentenmeting",
     details:
       "Een persoonlijke sessie van twee uur waarin je via een assessment met onder andere negen eenvoudige houdingen ervaart waar je talenten liggen. Inclusief een uitgebreid rapport met inzicht in je profiel, drijfveren, valkuilen en ontwikkeltips.",
-    price: "Vanaf €350,- excl. BTW",
+    price: "Vanaf €475,- excl. BTW",
   },
   {
     title: "Teamontwikkeling & Workshops",
